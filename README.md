@@ -67,3 +67,8 @@ make train-burglary-ind-val
  ROC-AUC: 0.7468 
  AP: 0.7477
 ```
+
+### Re-generation of JSON graph file from raw burglary dataset (Optional)
+```python
+python israel_lea_inp_burglary_v2_crimes_network.py
+```
