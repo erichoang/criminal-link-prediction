@@ -1,0 +1,22 @@
+The sheet of offender data contains personal data for each offender , for example - number of crimes he committed, number of time he was abroad etc
+
+crimeID - case number  -- number of cases 
+
+offenderID - offender pin - people involved ....
+
+Date
+
+X,Y -  minmax scaled crime site coordinates
+
+txt_emb_1: takzir_embeddings is a SIF* embedding for the case summary (typically a few sentences in free text describing the case)
+
+txt_emb_2: rechush_embedings is a SIF embedding for the description of stolen items
+
+txt_emb_3: edut_embeddings is a SIF embedding of the victim testimony
+
+Note that these last two embeddings do not appear  in all rows. In these cases they are either NaN or a vector of zeros
+
+z: Column H is another feature of crimes -type of crime, it can be either car/house/bussiness burglary.
+
+*author = {Sanjeev Arora and Yingyu Liang and Tengyu Ma},
+title = {A Simple but Tough-to-Beat Baseline for Sentence Embeddings}, 
