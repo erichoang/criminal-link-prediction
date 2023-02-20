@@ -1,5 +1,5 @@
-# Criminal Link Prediction
-Inductive and Transductive Link Prediction for Criminal Network Analysis
+# Criminal Inductive Link Prediction
+Inductive Link Prediction for Criminal Network Analysis
 
 This work has been adapted from the original implementation by `working-yuhao`, found at https://github.com/working-yuhao/DEAL, and a fork by `lajd`, found at https://github.com/lajd/DEAL.
 
