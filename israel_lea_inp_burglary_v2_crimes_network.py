@@ -37,6 +37,9 @@ import networkx as nx
 
 from networkx.readwrite import json_graph
 
+def isNaN(num):
+    return num != num
+
 def update_crimeid_and_offenderid(dataframe):
     df = dataframe
 
@@ -121,16 +124,19 @@ def generate_nx_graph(graph_name, graph_description, graph_version, graph_id, di
             emb_stolen_items_description = row['txt_emb_2']
             emb_victim_testimony = row['txt_emb_3']
             crime_type = row['z']
-            G.add_node(node_id, type='crime',
-                        list_oid=list(list_oid),
-                        x_coordinate=x_coordinate,
-                        y_coordinate=y_coordinate,
-                        date=date.strftime('%Y-%m-%d'),
-                        emb_case_summary=emb_case_summary,
-                        emb_stolen_items_description=emb_stolen_items_description,
-                        emb_victim_testimony=emb_victim_testimony,
-                        crime_type=crime_type,
-                        original_node=node_id)
+
+            # remove nodes with emb_case_summary being NaN
+            if not isNaN(emb_case_summary):
+                G.add_node(node_id, type='crime',
+                            list_oid=list(list_oid),
+                            x_coordinate=x_coordinate,
+                            y_coordinate=y_coordinate,
+                            date=date.strftime('%Y-%m-%d'),
+                            emb_case_summary=emb_case_summary,
+                            emb_stolen_items_description=emb_stolen_items_description,
+                            emb_victim_testimony=emb_victim_testimony,
+                            crime_type=crime_type,
+                            original_node=node_id)
             
             set_cid_in_data.add(node_id)
 
@@ -138,9 +144,10 @@ def generate_nx_graph(graph_name, graph_description, graph_version, graph_id, di
         u, v = key
         weight = value
 
-        if u in set_cid_in_data and v in set_cid_in_data:
-            original_edge = (u, v)
-            G.add_edge(u, v, weight=weight, type='relation', observed=True, original_edge=original_edge)
+        if u in G.nodes() and v in G.nodes():
+            if u in set_cid_in_data and v in set_cid_in_data:
+                original_edge = (u, v)
+                G.add_edge(u, v, weight=weight, type='relation', observed=True, original_edge=original_edge)
 
     return G
 

@@ -110,12 +110,15 @@ class BurglaryDataset:
         graph = load_graph_from_json_file(self.root)
         print(nx.info(graph))
 
-        remove_node_without_emb_case_summary(graph)
+        # remove_node_without_emb_case_summary(graph)
 
-        print(nx.info(graph))
+        # print(nx.info(graph))
 
         for node in graph.nodes():
-            temp_list = reverse_array_from_string(graph.nodes[node]['emb_case_summary'])
+            try:
+                temp_list = reverse_array_from_string(graph.nodes[node]['emb_case_summary'])
+            except:
+                print('An exception occurred', node, graph.nodes[node])
             graph.nodes[node]['emb_case_summary'] = temp_list
 
         pyg_graph = from_networkx(graph, group_node_attrs=['emb_case_summary'], group_edge_attrs=['weight'])
@@ -135,16 +138,23 @@ if __name__ == "__main__":
     graph = load_graph_from_json_file(graph_file_path)
     print(nx.info(graph))
 
-    remove_node_without_emb_case_summary(graph)
+    # remove_node_without_emb_case_summary(graph)
 
-    print(nx.info(graph))
+    # print(nx.info(graph))
     # print(len(graph.edges(data=True)))
 
+
     for node in graph.nodes():
-        temp_list = reverse_array_from_string(graph.nodes[node]['emb_case_summary'])
+        try:
+            temp_list = reverse_array_from_string(graph.nodes[node]['emb_case_summary'])
+        except:
+            print('An exception occurred', node, graph.nodes[node])
+
+        
 
         # graph.nodes[node]['emb_case_summary'] = torch.FloatTensor(temp_list)
         graph.nodes[node]['emb_case_summary'] = temp_list
+    
 
     pyg_graph = from_networkx(graph, group_node_attrs=['emb_case_summary'], group_edge_attrs=['weight'])
     # pyg_graph = from_networkx(graph, group_edge_attrs=['weight'])

@@ -76,8 +76,14 @@ def precompute_dist_data(edge_index, num_nodes, approximate=0) -> np.ndarray:
         # dists_dict = nx.all_pairs_shortest_path_length(graph,cutoff=approximate if approximate>0 else None)
         # dists_dict = {c[0]: c[1] for c in dists_dict}
         dists_dict = all_pairs_shortest_path_length_parallel(graph,cutoff=approximate if approximate>0 else None)
+        # print(graph.nodes())
+        # print('dists_dict', dists_dict)
         for i, node_i in enumerate(graph.nodes()):
-            shortest_dist = dists_dict[node_i]
+            try:
+                shortest_dist = dists_dict[node_i]
+            except:
+                print('An exception occurred ', 'i ', i, 'node_i', node_i)
+            
             for j, node_j in enumerate(graph.nodes()):
                 dist = shortest_dist.get(node_j, -1)
                 if dist!=-1:

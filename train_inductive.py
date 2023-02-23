@@ -170,15 +170,15 @@ class InductiveDeal:
         # parser.add_argument('--thetas', action='store', dest='thetas',
         #                     type=str, nargs='*', default=[0.8, 6.8, 0.4],
         #                     help="Theta values")
-        parser.add_argument('--thetas', action='store', dest='thetas',
-                            type=str, nargs='*', default=[0.4, 3.4, 0.2],
-                            help="Theta values")
+        # parser.add_argument('--thetas', action='store', dest='thetas',
+        #                     type=str, nargs='*', default=[0.4, 3.4, 0.2],
+        #                     help="Theta values")
         # parser.add_argument('--thetas', action='store', dest='thetas',
         #                     type=str, nargs='*', default=[0.2, 1.7, 0.1],
         #                     help="Theta values")
-        # parser.add_argument('--thetas', action='store', dest='thetas',
-        #                     type=str, nargs='*', default=[0.1, 0.85, 0.05],
-        #                     help="Theta values")
+        parser.add_argument('--thetas', action='store', dest='thetas',
+                            type=str, nargs='*', default=[0.1, 0.85, 0.05],
+                            help="Theta values")
         # parser.add_argument('--thetas', action='store', dest='thetas',
         #                     type=str, nargs='*', default=[0.05, 0.425, 0.025],
         #                     help="Theta values")
