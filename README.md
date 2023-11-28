@@ -1,9 +1,25 @@
 # Criminal Inductive Link Prediction
-Inductive Link Prediction for Criminal Network Analysis
+This repository is a part of the paper "Inductive and Transductive Link Prediction for Criminal Network Analysis," published in Journal of Computational Science in 2023. The paper discusses how identifying potential offenders who might co-offend can help law enforcement focus their investigations and improve predictive policing. Traditional methods rely heavily on manual work by police officers, which can be inefficient. To address this, the paper introduces two machine learning frameworks based on graph theory, specifically for burglary cases. These are transductive link prediction (see the implementation [here](https://github.com/erichoang/criminal-network-visualization)), which predicts connections between existing nodes (offenders or cases), and inductive link prediction (this repository), which finds links between new cases and existing nodes. The results show good prediction accuracy: 68.5% for co-offender prediction, 75.83% for transductive crime linkage, and 74.8% for inductive crime linkage.
 
-This work has been adapted from the original implementation by `working-yuhao`, found at https://github.com/working-yuhao/DEAL, and a fork by `lajd`, found at https://github.com/lajd/DEAL.
+This repository has been adapted from the original implementation by `working-yuhao`, found at https://github.com/working-yuhao/DEAL, and a fork by `lajd`, found at https://github.com/lajd/DEAL. Specifically, this repository involves restructuring the initial implementation to make it more concise and modular. The restructuring process is dedicated to enhancing criminal networks' inductive link prediction task.
 
-Specifically, this project involves restructuring the initial implementation to make it more concise and modular. The restructuring process is solely dedicated to enhancing the inductive link prediction task for criminal network.
+## Citation
+ Ahmadi, Z., Nguyen, H. H., Zhang, Z., Bozhkov, D., Kudenko, D., Jofre, M., Calderoni, F., Cohen, N., & Solewicz, Y. (2023). Inductive and transductive link prediction for criminal network analysis. Journal of Computational Science. [Preprint](https://hoanghnguyen.com/assets/pdf/ahmadi2023inductive.pdf)
+```
+@article{ahmadi2023inductive,
+  title = {Inductive and Transductive Link Prediction for Criminal Network Analysis},
+  author = {Ahmadi, Zahra and Nguyen, Hoang H. and Zhang, Zijian and Bozhkov, Dmytro and Kudenko, Daniel and Jofre, Maria and Calderoni, Francesco and Cohen, Noa and Solewicz, Yosef},
+  journal = {Journal of Computational Science},
+  publisher = {Elsevier},
+  volume = {72},
+  pages = {102063},
+  year = {2023},
+  issn = {1877-7503},
+  doi = {https://doi.org/10.1016/j.jocs.2023.102063},
+  url = {https://www.sciencedirect.com/science/article/pii/S1877750323001230},
+}
+```
+ 
 
 ### Requirements
 - Linux
