@@ -1,4 +1,10 @@
 # Inductive Link Prediction for Criminal Network Analysis
+[![python](https://img.shields.io/badge/python-3.9.16-blue)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.8.1-orange)](https://pytorch.org/)
+[![PyG](https://img.shields.io/badge/PyG-2.0.1-green)](https://pytorch-geometric.readthedocs.io/)
+[![NetworkX](https://img.shields.io/badge/networkx-2.6.3-orange)](https://networkx.org/)
+[![ROXANNE-license](https://img.shields.io/badge/License-ROXANNE-blue.svg)](https://www.roxanne-euproject.org/)
+
 This repository is a part of the paper "Inductive and Transductive Link Prediction for Criminal Network Analysis," published in the Journal of Computational Science in 2023. The paper discusses how identifying potential offenders who might co-offend can help law enforcement focus their investigations and improve predictive policing. Traditional methods rely heavily on manual work by police officers, which can be inefficient. To address this, the paper introduces two machine learning frameworks based on graph theory, specifically for burglary cases. These are transductive link prediction (see the implementation [here](https://github.com/erichoang/criminal-network-visualization)), which predicts connections between existing nodes (offenders or cases), and inductive link prediction (this repository), which finds links between new cases and existing nodes.
 
 This repository has been adapted from the original implementation by `working-yuhao`, found at https://github.com/working-yuhao/DEAL, and a fork by `lajd`, found at https://github.com/lajd/DEAL. Specifically, this repository involves restructuring the initial implementation to make it more concise and modular. The restructuring process is dedicated to enhancing criminal networks' inductive link prediction task.
